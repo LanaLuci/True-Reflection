@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2512662783315668063, guid: 3e97240c1664a384daaa0e0867edf87c, type: 3}
       propertyPath: m_LocalScale.x
-      value: -0.09329051
+      value: -0.087071136
       objectReference: {fileID: 0}
     - target: {fileID: 2512662783315668063, guid: 3e97240c1664a384daaa0e0867edf87c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.15
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 2512662783315668063, guid: 3e97240c1664a384daaa0e0867edf87c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.08133936
+      value: 0.07591673
       objectReference: {fileID: 0}
     - target: {fileID: 2512662783315668063, guid: 3e97240c1664a384daaa0e0867edf87c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2512662783315668063, guid: 3e97240c1664a384daaa0e0867edf87c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.013000011
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2512662783315668063, guid: 3e97240c1664a384daaa0e0867edf87c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -132,7 +132,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4284979695619353814, guid: 9f88aca52be1e7446ad9f002a8e163fa, type: 3}
       propertyPath: m_Name
-      value: Maze Cell Variant
+      value: L Mirror Cell
       objectReference: {fileID: 0}
     - target: {fileID: 8395324594261839241, guid: 9f88aca52be1e7446ad9f002a8e163fa, type: 3}
       propertyPath: m_LocalPosition.y

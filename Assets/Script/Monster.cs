@@ -43,4 +43,9 @@ public class Monster : MonoBehaviour
             agent.SetDestination(target.position);
         }
     }
+
+    public void SpeedChange(float amount)
+    {
+        agent.speed += amount;
+    }
 }
