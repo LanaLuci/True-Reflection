@@ -268,7 +268,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7e42c83fe46ccf04ea2a84afaa428d90, type: 2}
+  - {fileID: 2100000, guid: b3f6b321fb306264a89ce509a5a859d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1471,7 +1471,7 @@ GameObject:
   - component: {fileID: 406114042}
   - component: {fileID: 406114041}
   m_Layer: 10
-  m_Name: Cylinder
+  m_Name: Hat part
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7233,7 +7233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7202713, b: 0, a: 0.7882353}
+  m_Color: {r: 0.7830189, g: 0.40857178, b: 0, a: 0.7882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9145,10 +9145,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 581134626}
-  - {fileID: 1828675154}
   - {fileID: 419959233}
   - {fileID: 1304942896}
   - {fileID: 80029969}
+  - {fileID: 1828675154}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -10166,7 +10166,7 @@ GameObject:
   - component: {fileID: 1656075092}
   - component: {fileID: 1656075091}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Portal Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10855,7 +10855,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7e42c83fe46ccf04ea2a84afaa428d90, type: 2}
+  - {fileID: 2100000, guid: 1b161a29bd8b53842ad8b696bbada021, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
