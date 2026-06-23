@@ -9210,6 +9210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mirrorCam: {fileID: 1651491903}
+  maxDist: 30
 --- !u!4 &1414426350
 Transform:
   m_ObjectHideFlags: 0

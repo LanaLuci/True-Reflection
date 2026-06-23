@@ -4,6 +4,7 @@ using System.Collections;
 public class MirrorManager : MonoBehaviour
 {
     [SerializeField] private Camera mirrorCam;
+    [SerializeField] private float maxDist;
     //[SerializeField] private RenderTexture texture;
     public static MirrorManager instance;
     private Mirror[] mirrors;
@@ -17,6 +18,8 @@ public class MirrorManager : MonoBehaviour
             yield return null;
         }
         mirrors = FindObjectsByType<Mirror>(FindObjectsSortMode.None);
+        //if (mirrors == null)
+        //    Debug.LogWarning("0");
 
 
     }
@@ -40,7 +43,7 @@ public class MirrorManager : MonoBehaviour
             float dist = Vector3.Distance(playerPos, mirrors[i].transform.position);
 
 
-            if (dist > 30f)
+            if (dist > maxDist)
                 continue;
 
 
@@ -54,6 +57,9 @@ public class MirrorManager : MonoBehaviour
                 continue;
 
             RenderMirror(mirrors[i]);
+
+            if (i == mirrors.Length -1)
+                RenderMirror(mirrors[i]);
 
             //if (dist < bestDistance)
             //{
@@ -71,6 +77,7 @@ public class MirrorManager : MonoBehaviour
 
     public void RenderMirror(Mirror cam)
     {
+
         mirrorCam.targetTexture = cam.Texture;
         mirrorCam.transform.position = cam.transform.position;
         mirrorCam.transform.rotation = cam.transform.rotation * Quaternion.Euler(-90, 0, 0);
