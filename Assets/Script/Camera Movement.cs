@@ -13,8 +13,10 @@ public class CameraMovement : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
+        if (PauseManager.gamePaused)
+            return;
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
         xRota -= mouseY;

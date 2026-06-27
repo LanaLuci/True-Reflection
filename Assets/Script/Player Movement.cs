@@ -24,8 +24,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
+
 
         onFloor = Physics.RaycastAll(transform.position, Vector3.down, 1.2f, floorLayer).Length > 0;
         sprintable = stamina > 0;
@@ -34,7 +35,25 @@ public class PlayerMovement : MonoBehaviour
         {
             doublejump = true;
         }
+        if (PauseManager.gamePaused)
+        {
+            return;
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
 
+            if (onFloor)
+            {
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+                onFloor = false;
+
+            }
+            else if (doublejump)
+            {
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+                doublejump = false;
+            }
+        }
         Vector3 move = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
 
         if (Input.GetKey(KeyCode.LeftControl) && sprintable)
@@ -52,20 +71,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (onFloor)
-            {
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
-                onFloor = false;
 
-            }
-            else if (doublejump)
-            {
-                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
-                doublejump = false;
-            }
-        }
     }
 
 

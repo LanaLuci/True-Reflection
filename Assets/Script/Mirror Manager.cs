@@ -41,6 +41,7 @@ public class MirrorManager : MonoBehaviour
         {
 
             float dist = Vector3.Distance(playerPos, mirrors[i].transform.position);
+            //Debug.Log(dist);
 
 
             if (dist > maxDist)

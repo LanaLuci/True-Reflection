@@ -37,7 +37,7 @@
     height: 100px;
     align-self: center;
     align-items: center;
-    background-color: rgba(255, 0, 0, 0.57);
+    background-color: rgba(255, 0, 0, 0.51);
     -unity-background-image-tint-color: rgba(255, 255, 255, 0);
     color: rgb(168, 10, 0);
     -unity-text-align: upper-left;

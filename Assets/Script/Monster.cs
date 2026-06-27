@@ -1,22 +1,44 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Monster : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private float updateInterval, range;
+    public UnityEvent onPlayerCaught;
     private NavMeshAgent agent;
     private float timer;
+    public static bool playerCaught {  get; private set; }
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         timer = 0f;
+        playerCaught = false;
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        if (Vector3.Distance(transform.position, target.position) < 3f)
+        {
+            onPlayerCaught.Invoke();
+            playerCaught=true;
+        }
+        if (playerCaught)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
+            return;
+        }
+        if (PauseManager.gamePaused)
+            return;
+
+
         timer += Time.deltaTime;
         if (timer > updateInterval)
         {
@@ -34,6 +56,8 @@ public class Monster : MonoBehaviour
             
         }
     }
+
+
 
     private void StartChase()
     {
