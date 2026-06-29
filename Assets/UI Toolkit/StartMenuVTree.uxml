@@ -1,8 +1,14 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/StartMenu.uss?fileID=7433441132597879392&amp;guid=a068f1d1226746c4f9d7fd2dd3bcfa8b&amp;type=3#StartMenu" />
     <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 2156px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;); font-size: 54px; -unity-text-align: upper-center; align-self: center;">
-        <ui:Label text="True Reflection" name="GameTitle" style="-unity-text-align: upper-center; -unity-font-style: bold; position: absolute; align-self: center; top: 100px; text-shadow: -6px 2px 0 rgb(96, 96, 96); font-size: 84px;" />
-        <ui:Button text="Start" name="StartButton" class="button" style="top: 400px;" />
-        <ui:Button text="Quit" name="QuitButton" class="quitbutton" style="top: 500px;" />
+        <ui:Label text="True Reflection" name="GameTitle" style="-unity-text-align: middle-center; -unity-font-style: bold; position: absolute; align-self: center; top: 100px; text-shadow: -6px 2px 0 rgb(96, 96, 96); font-size: 84px;" />
+        <ui:Button text="Start" name="StartButton" class="button" style="top: 400px; -unity-text-align: middle-left;" />
+        <ui:Button text="Settings" name="SettingsButton" class="button" style="top: 500px; font-size: 40px; -unity-text-align: middle-left;" />
+        <ui:Button text="Quit" name="QuitButton" class="quitbutton" style="top: 600px; -unity-text-align: middle-left;" />
+        <ui:VisualElement name="Settings" style="flex-grow: 1; width: 600px; height: 20px; left: 780px; right: auto; bottom: 100px; background-color: rgb(47, 159, 255); border-bottom-color: rgb(0, 124, 255); border-top-color: rgb(0, 106, 255); border-top-width: 10px; border-bottom-width: 10px; transition-property: height; transition-duration: 0.5s; transition-timing-function: ease-in-out; background-size: 100% 80%;">
+            <ui:Button text="Save and Close" name="SettingsCloseButton" style="top: 640px; align-self: center; align-content: flex-end; width: 400px; font-size: 45px; background-color: rgb(0, 0, 0); -unity-text-outline-color: rgb(176, 176, 176); color: rgb(255, 255, 255);" />
+            <ui:Slider label="BGM" value="42" high-value="0" name="BGMSlider" low-value="-80" />
+            <ui:Slider label="SFX" value="42" high-value="0" name="SFXSlider" low-value="-80" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
