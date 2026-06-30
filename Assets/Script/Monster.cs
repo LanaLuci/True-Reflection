@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Monster : MonoBehaviour
 {
@@ -10,28 +11,39 @@ public class Monster : MonoBehaviour
     public UnityEvent onPlayerCaught;
     private NavMeshAgent agent;
     private float timer;
+    private bool stunned = false;
     public static bool playerCaught {  get; private set; }
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
+
         timer = 0f;
         playerCaught = false;
     }
 
     void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, target.position) < 3f)
+        if (stunned)
+            return;
+        if (Vector3.Distance(transform.position, target.position) < 4f)
         {
-            onPlayerCaught.Invoke();
-            playerCaught=true;
+            if (!playerCaught)
+            {
+                onPlayerCaught.Invoke();
+                playerCaught = true;
+            }
         }
         if (playerCaught)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 SceneManager.LoadScene("SampleScene");
+            }
+            if (Input.GetKeyDown(KeyCode.H))
+            {
+                SceneManager.LoadScene("Start");
             }
             return;
         }
@@ -71,5 +83,20 @@ public class Monster : MonoBehaviour
     public void SpeedChange(float amount)
     {
         agent.speed += amount;
+
+    }
+    public void Stun(float dur)
+    {
+        StartCoroutine(StunCoroutine(dur));
+    }
+    private IEnumerator StunCoroutine(float duration)
+    {
+        float currentSpeed = agent.speed;
+        agent.speed = 0f;
+        stunned = true;
+        yield return new WaitForSeconds(duration);
+        stunned = false;
+        agent.speed = currentSpeed;
+
     }
 }

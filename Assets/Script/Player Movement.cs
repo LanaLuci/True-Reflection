@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         onFloor = Physics.RaycastAll(transform.position, Vector3.down, 1.2f, floorLayer).Length > 0;
+
         sprintable = stamina > 0;
 
         if (onFloor)

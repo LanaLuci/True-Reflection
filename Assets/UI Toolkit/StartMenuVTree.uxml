@@ -2,13 +2,19 @@
     <Style src="project://database/Assets/UI%20Toolkit/StartMenu.uss?fileID=7433441132597879392&amp;guid=a068f1d1226746c4f9d7fd2dd3bcfa8b&amp;type=3#StartMenu" />
     <ui:VisualElement name="VisualElement" style="flex-grow: 1; width: 2156px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Fonts/LiberationSans.ttf?fileID=12800000&amp;guid=e3265ab4bf004d28a9537516768c1c75&amp;type=3#LiberationSans&quot;); font-size: 54px; -unity-text-align: upper-center; align-self: center;">
         <ui:Label text="True Reflection" name="GameTitle" style="-unity-text-align: middle-center; -unity-font-style: bold; position: absolute; align-self: center; top: 100px; text-shadow: -6px 2px 0 rgb(96, 96, 96); font-size: 84px;" />
-        <ui:Button text="Start" name="StartButton" class="button" style="top: 400px; -unity-text-align: middle-left;" />
-        <ui:Button text="Settings" name="SettingsButton" class="button" style="top: 500px; font-size: 40px; -unity-text-align: middle-left;" />
-        <ui:Button text="Quit" name="QuitButton" class="quitbutton" style="top: 600px; -unity-text-align: middle-left;" />
-        <ui:VisualElement name="Settings" style="flex-grow: 1; width: 600px; height: 20px; left: 780px; right: auto; bottom: 100px; background-color: rgb(47, 159, 255); border-bottom-color: rgb(0, 124, 255); border-top-color: rgb(0, 106, 255); border-top-width: 10px; border-bottom-width: 10px; transition-property: height; transition-duration: 0.5s; transition-timing-function: ease-in-out; background-size: 100% 80%;">
+        <ui:Button text="Start" name="StartButton" class="button" style="top: 350px; -unity-text-align: middle-left;" />
+        <ui:Button text="Settings" name="SettingsButton" class="button" style="top: 450px; font-size: 40px; -unity-text-align: middle-left;" />
+        <ui:Button text="Instruction" name="InstructionButton" class="button" style="top: 550px; font-size: 40px; -unity-text-align: middle-left; white-space: pre;" />
+        <ui:Button text="Quit" name="QuitButton" class="quitbutton" style="top: 630px; -unity-text-align: middle-left;" />
+        <ui:VisualElement name="Settings" enabled="true" style="flex-grow: 1; width: 600px; height: 700px; left: 780px; right: auto; bottom: 20px; background-color: rgb(47, 159, 255); border-bottom-color: rgb(0, 124, 255); border-top-color: rgb(0, 106, 255); border-top-width: 10px; border-bottom-width: 10px; transition-property: height; transition-duration: 0.5s; transition-timing-function: ease-in-out; background-size: 100% 80%; max-height: 2000px; min-height: 750px; position: absolute; align-self: center; align-items: stretch;">
             <ui:Button text="Save and Close" name="SettingsCloseButton" style="top: 640px; align-self: center; align-content: flex-end; width: 400px; font-size: 45px; background-color: rgb(0, 0, 0); -unity-text-outline-color: rgb(176, 176, 176); color: rgb(255, 255, 255);" />
-            <ui:Slider label="BGM" value="42" high-value="0" name="BGMSlider" low-value="-80" />
-            <ui:Slider label="SFX" value="42" high-value="0" name="SFXSlider" low-value="-80" />
+            <ui:Slider label="BGM" value="0" high-value="20" name="BGMSlider" low-value="-80" style="right: auto; width: 570px;" />
+            <ui:Slider label="SFX" value="0" high-value="20" name="SFXSlider" low-value="-80" style="width: 570px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Instruction" enabled="true" style="flex-grow: 1; width: 600px; height: 750px; left: 780px; right: auto; bottom: 20px; background-color: rgb(47, 159, 255); border-bottom-color: rgb(0, 124, 255); border-top-color: rgb(0, 106, 255); border-top-width: 10px; border-bottom-width: 10px; transition-property: height; transition-duration: 0.5s; transition-timing-function: ease-in-out; background-size: 100% 80%; max-height: 2000px; min-height: 800px; position: absolute; align-self: center; align-items: stretch;">
+            <ui:Button text="Close" name="InstructionCloseButton" style="top: auto; align-self: center; align-content: flex-end; width: 400px; font-size: 45px; background-color: rgb(0, 0, 0); -unity-text-outline-color: rgb(176, 176, 176); color: rgb(255, 255, 255); bottom: 20px; position: absolute;" />
+            <ui:Label text="THE CONTROLS&#10;&#10;WASD or arrow keys to move&#10;&#10;Space to jump (you can double jump)&#10;&#10;Left CTRL to sprint (will cost stamina,&#10;stamina will recover while not sprinting)&#10;&#10;P to pause&#10;&#10;THE GOAL&#10;&#10;Collect the coins to unlock the escape portal&#10;&#10;Collect the orbs to stun the Creature&#10;&#10;Don&apos;t get caught&#10;" style="font-size: 30px; -unity-text-align: upper-left; text-shadow: 0 0 0 rgba(0, 0, 0, 0); padding-left: 10px; top: 0; position: absolute;" />
+            <ui:Label text="You are not alone." style="font-size: 20px; -unity-text-align: upper-center; text-shadow: 0 0 0 rgba(0, 0, 0, 0); padding-left: 10px; top: auto; -unity-font-style: bold; color: rgb(0, 6, 255); position: absolute; left: 200px; align-self: center; bottom: 90px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

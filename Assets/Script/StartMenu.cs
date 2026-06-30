@@ -8,8 +8,8 @@ using System.Collections.Generic;
 public class StartMenu : MonoBehaviour
 {
     private UIDocument _doc;
-    private Button startButton, quitButton, settingsButton, settingsCloseButton;
-    private VisualElement settingsContainer;
+    private Button startButton, quitButton, settingsButton, settingsCloseButton, instructionButton, instructionCloseButton;
+    private VisualElement settingsContainer, instructionContainer;
     private Slider bgmSlider, sfxSlider;
     private List<Button> _menuButtons = new List<Button>();
     public UnityEvent OnAnyButtonClicked;
@@ -35,6 +35,13 @@ public class StartMenu : MonoBehaviour
         settingsCloseButton.RegisterCallback<ClickEvent>(OnSettingsExit);
         settingsContainer = _doc.rootVisualElement.Q("Settings");
         settingsContainer.style.display = DisplayStyle.None;
+        //for instruction window
+        instructionButton = _doc.rootVisualElement.Q("InstructionButton") as Button;
+        instructionButton.RegisterCallback<ClickEvent>(OnInstructionOpen);
+        instructionCloseButton = _doc.rootVisualElement.Q("InstructionCloseButton") as Button;
+        instructionCloseButton.RegisterCallback<ClickEvent>(OnInstructionExit);
+        instructionContainer = _doc.rootVisualElement.Q("Instruction");
+        instructionContainer.style.display = DisplayStyle.None;
         //for setting sliders
         bgmSlider = _doc.rootVisualElement.Q("BGMSlider") as Slider;
         bgmSlider.RegisterValueChangedCallback(OnBGMChanged);
@@ -66,6 +73,15 @@ public class StartMenu : MonoBehaviour
     private void OnSettingsExit(ClickEvent evt)
     {
         settingsContainer.style.display = DisplayStyle.None;
+    }
+
+    private void OnInstructionOpen(ClickEvent evt)
+    {
+        instructionContainer.style.display = DisplayStyle.Flex;
+    }
+    private void OnInstructionExit(ClickEvent evt)
+    {
+        instructionContainer.style.display = DisplayStyle.None;
     }
 
     private void OnAnyClick(ClickEvent evt)

@@ -27,6 +27,20 @@ public class AudioManager : MonoBehaviour
             this.sfxSource.PlayOneShot(sfxList[id]);
         }
 
+
+    }
+
+    public void PauseBGM()
+    {
+        if (PauseManager.gamePaused)
+        {
+            bgmSource.Pause();
+        }
+        else
+        {
+            bgmSource.UnPause();
+        }
+
     }
 
     public void SetBGM(float value)
