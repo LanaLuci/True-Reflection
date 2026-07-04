@@ -86,7 +86,7 @@ public class MazeGenerator : MonoBehaviour
 
     private IEnumerable<MazeCell> GetUnvisitedCells(MazeCell currentCell)
     {
-        int x = (int)((currentCell.transform.position.x - startX) / sizeMultiplier);
+        int x = (int)((currentCell.transform.position.x - startX) / sizeMultiplier );
         int z = (int)((currentCell.transform.position.z - startZ) / sizeMultiplier);
 
         if (x + 1 < width)

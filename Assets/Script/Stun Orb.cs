@@ -7,10 +7,10 @@ public class StunOrb : Pickup
     protected override void OnPicked()
     {
         Monster monster = GameObject.Find("Monster").GetComponent<Monster>();
-        if (monster == null)
-            Debug.LogWarning("cant find");
+
         monster.Stun(stun_dur);
         CoinManager.instance.ReadyNextPower();
+        CoinManager.instance.onStunCollected.Invoke();
         Destroy(gameObject);
     }
 }

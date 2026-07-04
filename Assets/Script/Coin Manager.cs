@@ -15,6 +15,7 @@ public class CoinManager : MonoBehaviour
     [SerializeField] private float powerCD;
     private float powerTimer;
     [SerializeField] private GameObject powerPrefab;
+    public UnityEvent onStunCollected;
 
     public static CoinManager instance;
     private float minX, maxX, minZ, maxZ, sizeMulti;

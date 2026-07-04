@@ -31,17 +31,18 @@ public class Monster : MonoBehaviour
         {
             if (!playerCaught)
             {
-                onPlayerCaught.Invoke();
                 playerCaught = true;
+                onPlayerCaught.Invoke();
+
             }
         }
         if (playerCaught)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButton(0))
             {
                 SceneManager.LoadScene("SampleScene");
             }
-            if (Input.GetKeyDown(KeyCode.H))
+            if (Input.GetKey(KeyCode.H))
             {
                 SceneManager.LoadScene("Start");
             }

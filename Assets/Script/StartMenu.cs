@@ -17,6 +17,8 @@ public class StartMenu : MonoBehaviour
 
     private void Start()
     {
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
         _doc = GetComponent<UIDocument>();
         _menuButtons =  _doc.rootVisualElement.Query<Button>().ToList();
         for (int i = 0; i < _menuButtons.Count; i++)
